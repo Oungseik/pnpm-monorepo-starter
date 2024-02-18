@@ -1,6 +1,6 @@
 import { TRPCError, initTRPC } from "@trpc/server";
 import * as trpcExpress from "@trpc/server/adapters/express";
-import jwt from "jsonwebtoken";
+import * as jwt from "jsonwebtoken";
 
 import { config } from "@repo/config";
 
