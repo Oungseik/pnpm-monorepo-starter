@@ -24,5 +24,15 @@ export const authProcedure = publicProcedure.use(async (opts) => {
     throw new TRPCError({ code: "UNAUTHORIZED", message: "Authorization token not provided." });
   }
 
+  let decoded: string | jwt.JwtPayload;
+  try {
+    decoded = jwt.verify(token, config.jwt.authSecret);
+  } catch (e) {
+    if (e instanceof jwt.JsonWebTokenError) {
+      throw new TRPCError({ code: "UNAUTHORIZED", message: e.message });
+    }
+    throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+  }
+
   return opts.next();
 });
