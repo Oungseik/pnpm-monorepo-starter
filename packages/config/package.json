@@ -1,9 +1,13 @@
 {
   "name": "@repo/config",
   "version": "0.0.1",
-  "private": true,
   "description": "Global configuration of the monorepo.",
+  "type": "module",
   "main": "index.ts",
+  "types": "index.ts",
+  "files": [
+    "index.ts"
+  ],
   "keywords": [
     "configuration"
   ],

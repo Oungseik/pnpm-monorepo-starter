@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "types": "index.ts",
   "scripts": {
     "format": "prettier -w .",
     "format:check": "prettier -c .",
@@ -14,8 +13,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@repo/config": "workspace:*",
     "@trpc/server": "^10.45.1",
-    "jsonwebtoken": "^9.0.2",
-    "@repo/prettier-config": "workspace:*"
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@repo/prettier-config": "workspace:*",
+    "@types/jsonwebtoken": "^9.0.5"
   }
 }
