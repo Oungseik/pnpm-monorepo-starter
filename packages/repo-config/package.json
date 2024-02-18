@@ -1,0 +1,12 @@
+{
+  "name": "@repo/config",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Global configuration of the monorepo.",
+  "main": "index.ts",
+  "keywords": [
+    "configuration"
+  ],
+  "author": "",
+  "license": "ISC"
+}
