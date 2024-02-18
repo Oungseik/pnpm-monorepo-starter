@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Base config for prettier",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC"
