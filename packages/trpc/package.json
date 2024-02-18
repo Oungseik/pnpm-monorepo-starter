@@ -1,0 +1,21 @@
+{
+  "name": "@repo/trpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:fix": "eslint . --fix && yarn format"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@trpc/server": "^10.45.1",
+    "jsonwebtoken": "^9.0.2",
+    "@repo/prettier-config": "workspace:*"
+  }
+}
