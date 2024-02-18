@@ -5,12 +5,7 @@ module.exports = {
     es6: true,
   },
   plugins: ["@typescript-eslint", "simple-import-sort", "unused-imports", "import", "prettier"],
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:n/recommended",
-    "prettier",
-  ],
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   overrides: [
     {
       env: {
