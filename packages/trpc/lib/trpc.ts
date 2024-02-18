@@ -2,6 +2,8 @@ import { TRPCError, initTRPC } from "@trpc/server";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import jwt from "jsonwebtoken";
 
+import { config } from "@repo/config";
+
 export const createContext = ({ req }: trpcExpress.CreateExpressContextOptions) => {
   const token = req.headers.authorization?.slice(7);
   return { token };
