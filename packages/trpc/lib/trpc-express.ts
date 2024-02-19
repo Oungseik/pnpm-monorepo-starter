@@ -34,5 +34,7 @@ export const authProcedure = publicProcedure.use(async (opts) => {
     throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
   }
 
+  // TODO: setup your jwt authentication flow here
+
   return opts.next();
 });
