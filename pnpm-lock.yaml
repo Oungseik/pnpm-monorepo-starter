@@ -105,6 +105,9 @@ importers:
       '@repo/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
+      '@repo/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@types/jsonwebtoken':
         specifier: ^9.0.5
         version: 9.0.5
