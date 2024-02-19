@@ -1,1 +1,1 @@
-Learn pnpm workspace.
+Monorepo with PNPM workspace.
