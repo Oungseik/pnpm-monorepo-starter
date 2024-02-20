@@ -2,18 +2,18 @@
   "extends": "@repo/tsconfig/base.json",
   "compilerOptions": {
     "emitDeclarationOnly": false,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "@lib/*": [
-        "./lib/*"
+        "src/lib/*"
       ],
       "@routers/*": [
-        "./routers/*"
+        "src/routers/*"
       ]
     }
   },
   "include": [
-    "index.ts",
-    "lib"
+    "src"
   ],
 }
