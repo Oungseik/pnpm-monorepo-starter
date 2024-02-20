@@ -5,3 +5,5 @@ export const healthRouter = router({
     return { message: "TRPC is running" };
   }),
 });
+
+export type HealthRouter = typeof router;

@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  "files": [
+    "index.ts",
+    "lib",
+    "routers"
+  ],
   "scripts": {
     "check": "tsc --noemit --emitDeclarationOnly false",
     "format": "prettier -w .",
