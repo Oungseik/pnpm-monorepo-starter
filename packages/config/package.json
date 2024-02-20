@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "description": "Global configuration of the monorepo.",
   "type": "module",
-  "main": "index.ts",
-  "types": "index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "index.ts"
+    "dist"
   ],
+  "scripts": {
+    "build": "tsup"
+  },
   "keywords": [
     "configuration"
   ],
@@ -15,5 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.4"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.2"
   }
 }
