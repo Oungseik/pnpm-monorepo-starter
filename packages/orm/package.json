@@ -1,0 +1,30 @@
+{
+  "name": "@repo/orm",
+  "version": "0.0.1",
+  "description": "ORM for the repo.",
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "lib"
+  ],
+  "scripts": {
+    "check": "tsc --noemit --emitDeclarationOnly false",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:fix": "eslint . --fix && yarn format"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@repo/config": "workspace:*",
+    "better-sqlite3": "^9.4.1",
+    "drizzle-orm": "^0.29.3"
+  },
+  "devDependencies": {
+    "@repo/prettier-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "drizzle-kit": "^0.20.14"
+  }
+}
