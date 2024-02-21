@@ -5,15 +5,9 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@lib/*": [
-        "src/lib/*"
-      ],
-      "@routers/*": [
-        "src/routers/*"
-      ]
+      "@lib/*": ["src/lib/*"],
+      "@routers/*": ["src/routers/*"]
     }
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"]
 }

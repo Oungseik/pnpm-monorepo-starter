@@ -1,8 +1,7 @@
 import { TRPCError, initTRPC } from "@trpc/server";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import * as jwt from "jsonwebtoken";
-
-import { config } from "@repo/config";
+import config from "../config";
 
 export const createContext = ({ req }: trpcExpress.CreateExpressContextOptions) => {
   const token = req.headers.authorization?.slice(7);
@@ -26,7 +25,7 @@ export const authProcedure = publicProcedure.use(async (opts) => {
 
   let decoded: string | jwt.JwtPayload;
   try {
-    decoded = jwt.verify(token, config.jwt.authSecret);
+    decoded = jwt.verify(token, config.authSecret);
   } catch (e) {
     if (e instanceof jwt.JsonWebTokenError) {
       throw new TRPCError({ code: "UNAUTHORIZED", message: e.message });

@@ -20,8 +20,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@repo/config": "workspace:*",
     "@trpc/server": "^10.45.1",
+    "dotenv": "^16.4.5",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
