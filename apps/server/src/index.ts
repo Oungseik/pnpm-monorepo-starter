@@ -2,12 +2,12 @@ import { applyWSSHandler } from "@trpc/server/adapters/ws";
 import { WebSocketServer } from "ws";
 
 import app from "./app";
-import { config } from "@repo/config";
+import config from "./config";
 import { appRouter } from "@repo/trpc";
-import { logger } from "./lib/logger";
+import { logger } from "@/lib/logger";
 
-const server = app.listen(config.server.port, () => {
-  logger.info(`Server is running on port ${config.server.port}`);
+const server = app.listen(config.port, () => {
+  logger.info(`Server is running on port ${config.port}`);
 });
 
 /* TODO - if you don't want to use websocket delete from this  */
