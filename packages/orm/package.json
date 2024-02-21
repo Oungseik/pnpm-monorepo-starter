@@ -2,12 +2,14 @@
   "name": "@repo/orm",
   "version": "0.0.1",
   "description": "ORM for the repo.",
-  "main": "index.ts",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "index.ts",
-    "lib"
+    "dist"
   ],
   "scripts": {
+    "build": "tsup",
     "check": "tsc --noemit --emitDeclarationOnly false",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
-    "drizzle-kit": "^0.20.14"
+    "drizzle-kit": "^0.20.14",
+    "tsup": "^8.0.2"
   }
 }
