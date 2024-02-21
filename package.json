@@ -12,9 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@repo/config": "workspace:*"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
