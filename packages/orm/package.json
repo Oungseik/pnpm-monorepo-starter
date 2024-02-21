@@ -26,6 +26,7 @@
   "devDependencies": {
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
+    "@types/better-sqlite3": "^7.6.9",
     "drizzle-kit": "^0.20.14",
     "tsup": "^8.0.2"
   }
