@@ -18,7 +18,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@repo/config": "workspace:*",
     "better-sqlite3": "^9.4.1",
     "drizzle-orm": "^0.29.3"
   },
