@@ -28,6 +28,9 @@ coverage
 out/
 build
 dist
+.dist
+
+*/**/logs/*
 
 
 # Debug
