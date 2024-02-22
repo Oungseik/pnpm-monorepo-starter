@@ -3,8 +3,8 @@ import { publicProcedure, router } from "@lib/trpc-express";
 import { userModel } from "@repo/orm/user";
 import { TRPCError } from "@trpc/server";
 import bcrypt from "bcrypt";
-import config from "src/config";
 import jwt from "jsonwebtoken";
+import config from "src/config";
 
 export const authRouter = router({
   /**
@@ -61,7 +61,6 @@ export const authRouter = router({
       });
       return { message: "OK" };
     } catch (err) {
-      console.log(err);
       throw new TRPCError({ code: "BAD_REQUEST" });
     }
   }),

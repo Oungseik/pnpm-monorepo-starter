@@ -7,13 +7,15 @@
     "format": "prettier -w .",
     "format:check": "prettier -c .",
     "lint": "eslint --max-warnings=0 .",
-    "lint:fix": "eslint . --fix && yarn format"
+    "lint:fix": "eslint . --fix && yarn format",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "eslint": "^8.56.0",
@@ -24,10 +26,20 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.1.0",
+    "husky": "^9.0.11",
     "oxlint": "^0.2.9",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
+    ],
+    "**/*.{json,css,scss,md,webmanifest}": [
+      "prettier -w"
+    ]
   },
   "engines": {
     "pnpm": "^8.0.0"

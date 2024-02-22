@@ -1,10 +1,11 @@
+import { appRouter } from "@repo/trpc";
 import { applyWSSHandler } from "@trpc/server/adapters/ws";
 import { WebSocketServer } from "ws";
 
+import { logger } from "@/lib/logger";
+
 import app from "./app";
 import config from "./config";
-import { appRouter } from "@repo/trpc";
-import { logger } from "@/lib/logger";
 
 const server = app.listen(config.port, () => {
   logger.info(`Server is running on port ${config.port}`);

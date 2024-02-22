@@ -1,6 +1,7 @@
+import { count, eq } from "drizzle-orm";
+
 import { db } from "../datasource/sqlite";
 import { users } from "../schema/user.schema";
-import { eq, count } from "drizzle-orm";
 
 function findByEmail(email: string) {
   return db.query.users.findFirst({ where: eq(users.email, email) });
@@ -26,4 +27,4 @@ export const userModel = {
   create,
 };
 
-export type { User, NewUser } from "../schema/user.schema";
+export type { NewUser, User } from "../schema/user.schema";
