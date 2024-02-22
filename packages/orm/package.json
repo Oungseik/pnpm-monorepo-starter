@@ -8,13 +8,18 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./user": "./dist/lib/models/user.js"
+  },
   "scripts": {
     "build": "tsup",
     "check": "tsc --noemit --emitDeclarationOnly false",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
     "lint": "eslint --max-warnings=0 .",
-    "lint:fix": "eslint . --fix && yarn format"
+    "lint:fix": "eslint . --fix && yarn format",
+    "db:studio": "drizzle-kit studio"
   },
   "keywords": [],
   "author": "",
@@ -29,5 +34,8 @@
     "@types/better-sqlite3": "^7.6.9",
     "drizzle-kit": "^0.20.14",
     "tsup": "^8.0.2"
+  },
+  "engines": {
+    "node": ">=20.6.0"
   }
 }

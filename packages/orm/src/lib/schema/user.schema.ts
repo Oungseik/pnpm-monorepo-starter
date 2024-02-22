@@ -12,3 +12,6 @@ export const users = sqliteTable("users", {
   role: text("role").notNull().default("TESTER"),
   status: text("status").notNull().default("ACTIVE"),
 });
+
+export type User = typeof users.$inferSelect;
+export type NewUser = typeof users.$inferInsert;
