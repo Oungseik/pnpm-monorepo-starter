@@ -21,12 +21,17 @@
   "license": "ISC",
   "dependencies": {
     "@trpc/server": "^10.45.1",
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^9.4.1",
     "dotenv": "^16.4.5",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@repo/orm": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
+    "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.5",
     "tsup": "^8.0.2"
   }

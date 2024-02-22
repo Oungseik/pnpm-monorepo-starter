@@ -1,4 +1,4 @@
-import { publicProcedure, router } from "../lib/trpc-express";
+import { publicProcedure, router } from "@lib/trpc-express";
 
 export const healthRouter = router({
   check: publicProcedure.query(() => {
@@ -6,4 +6,4 @@ export const healthRouter = router({
   }),
 });
 
-export type HealthRouter = typeof router;
+export type HealthRouter = typeof healthRouter;

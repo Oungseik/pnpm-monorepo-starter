@@ -2,6 +2,7 @@ import { TRPCError, initTRPC } from "@trpc/server";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import * as jwt from "jsonwebtoken";
 import config from "../config";
+import { userModel } from "@repo/orm/user";
 
 export const createContext = ({ req }: trpcExpress.CreateExpressContextOptions) => {
   const token = req.headers.authorization?.slice(7);
@@ -33,7 +34,23 @@ export const authProcedure = publicProcedure.use(async (opts) => {
     throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
   }
 
-  // TODO: setup your jwt authentication flow here
+  if (typeof decoded === "string" || !("email" in decoded)) {
+    throw new TRPCError({ code: "BAD_REQUEST", message: "Invalid authorization token." });
+  }
 
-  return opts.next();
+  const user = await userModel.findByEmail(decoded.email);
+
+  if (!user) {
+    throw new TRPCError({ code: "NOT_FOUND", message: "User not found." });
+  }
+
+  return opts.next({ ctx: { user } });
+});
+
+export const adminProcedure = authProcedure.use(async (opts) => {
+  if (opts.ctx.user.role !== "ADMIN") {
+    throw new TRPCError({ code: "FORBIDDEN", message: "You're not admin to perform this action." });
+  }
+  const user = { ...opts.ctx.user, role: "ADMIN" as const };
+  return opts.next({ ctx: { user } });
 });
