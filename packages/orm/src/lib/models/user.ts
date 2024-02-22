@@ -10,8 +10,14 @@ async function total() {
   return db.select({ total: count(users.id) }).from(users);
 }
 
-async function create({ email, password }: { email: string; password: string }) {
-  return db.insert(users).values({ email, password });
+type CreateUserArg = {
+  email: string;
+  password: string;
+  role: "ADMIN" | "USER";
+};
+
+async function create({ email, password, role }: CreateUserArg) {
+  return db.insert(users).values({ email, password, uuid: crypto.randomUUID(), role });
 }
 
 export const userModel = {
@@ -19,3 +25,5 @@ export const userModel = {
   total,
   create,
 };
+
+export type { User, NewUser } from "../schema/user.schema";
