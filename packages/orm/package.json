@@ -10,7 +10,7 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./user": "./dist/lib/models/user.js"
+    "./user": "./dist/lib/models/user.model.js"
   },
   "scripts": {
     "build": "tsup",
