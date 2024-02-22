@@ -1,4 +1,4 @@
-PNPM Monorepo with Typescript + tRPC + Drizzle ORM and Express.
+# PNPM Monorepo with Typescript + tRPC + Drizzle ORM and Express.
 
 <div align="center">
   <h2>🔋 expressjs-tRPC-drizzle-monorepo-starter</h2>
